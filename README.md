@@ -1,6 +1,51 @@
-# AngularChatApp
+# Angular Chat App with Integrated Chat Component
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+
+## Project Overview
+
+This application demonstrates how to integrate a chat component from a Next.js application (example-todos-app) into an Angular 16 application using an iframe approach. The integration showcases how to embed external components or applications within an Angular framework.
+
+## Setup Instructions
+
+### Step 1: Run the example-todos-app (Chat Component)
+
+Navigate to the example-todos-app directory and start the development server:
+
+```bash
+cd /path/to/example-todos-app
+npm install
+npm run dev
+```
+
+This will start the Next.js application with the chat component on http://localhost:3000.
+
+### Step 2: Run the Angular Application
+
+In a new terminal window, navigate to the angular-chat-app directory and start the Angular development server:
+
+```bash
+cd /path/to/angular-chat-app
+npm install
+ng serve
+```
+
+This will start the Angular application on http://localhost:4200.
+
+## How It Works
+
+The integration works as follows:
+
+1. The Angular application includes a `ChatComponent` that embeds the example-todos-app in an iframe.
+2. The iframe securely loads the external application using Angular's DomSanitizer.
+3. Styling is applied to ensure a seamless user experience.
+
+## Customization
+
+To customize the integration:
+
+1. Update the `chatAppUrl` in `src/app/chat/chat.component.ts` to point to your deployed chat application.
+2. Modify the styling in `src/app/chat/chat.component.scss` to match your application's design.
 
 ## Development server
 

@@ -1,0 +1,34 @@
+<div class="todo-container">
+  <h2>Todo List</h2>
+  
+  <form (ngSubmit)="addTodo()" class="todo-input-container">
+    <input
+      [(ngModel)]="newTodoText"
+      name="newTodoText"
+      placeholder="Add a new task..."
+      class="todo-input"
+    />
+    <button type="submit" class="add-button">Add</button>
+  </form>
+  
+  <div class="todos-list">
+    <div *ngIf="todos.length === 0" class="empty-state">
+      No tasks yet. Add one above!
+    </div>
+    
+    <div *ngFor="let todo of todos" class="todo-item" [class.completed]="todo.completed">
+      <div class="todo-content">
+        <input 
+          type="checkbox" 
+          [checked]="todo.completed" 
+          (change)="toggleComplete(todo)"
+          class="todo-checkbox"
+        />
+        <span class="todo-text">{{ todo.text }}</span>
+      </div>
+      <button (click)="deleteTodo(todo.id)" class="delete-button">
+        <span>×</span>
+      </button>
+    </div>
+  </div>
+</div>

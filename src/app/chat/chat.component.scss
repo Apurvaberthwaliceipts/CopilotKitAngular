@@ -1,0 +1,42 @@
+.chat-iframe {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 400px; 
+  height: 500px;
+  border: none;
+  background: transparent !important;
+  pointer-events: auto;
+  box-shadow: none !important;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Override iframe body styles */
+:host ::ng-deep iframe {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: block;
+}
+
+/* Hide the iframe body background */
+:host ::ng-deep .__className_d65c78,
+:host ::ng-deep .iframe-body,
+:host ::ng-deep body {
+  background: transparent !important;
+}
+
+/* Make the component host element transparent */
+:host {
+  background: transparent !important;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Hide any h2 elements that might be causing issues */
+h2 {
+  display: none;
+}
